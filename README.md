@@ -21,3 +21,5 @@ pod install
 cd ../
 npx react-native run-ios
 ```
+
+Made with love <3
