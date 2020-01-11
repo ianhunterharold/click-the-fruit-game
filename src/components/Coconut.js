@@ -29,8 +29,8 @@ class Coconut extends Component {
 
   render(){
 
-    const palmTreeImage = require('../../ios/img/palm.png'); 
-    const coocnutImage = require('../../ios/img/coconut.png');
+    const palmTreeImage = require('../img/palm.png'); 
+    const coocnutImage = require('../img/coconut.png');
     //might not be best place to put images 1/11  
 
     return (
