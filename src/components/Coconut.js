@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
 
 class Coconut extends Component {
 
   state = {
     '😃': '😃 Smiley',
     'coconut':'string',
-    'clicks': 0
+    'clicks': 0,
+    'coconutCount': 0
   }
 
   handlePressedButton = () => {
@@ -16,25 +17,33 @@ class Coconut extends Component {
     })
   }
 
-  // componentDidMount = () => {
-  //   this.updatingCoconutToImage();
-  // }
-
-  // updatingCoconutToImage = () => {
-  //   const coocnutImage = require('../../ios/img/coconut.png');
-  //   this.setState = {
-  //     'coconut' : coocnutImage
-  //   }
-  // }
+  handleClickedCoconut = () => {
+    var newCoconutCount = this.state.coconutCount + 1
+    this.setState({
+      'coconutCount' : newCoconutCount
+    })
+  }
 
   render(){
 
     const palmTreeImage = require('../img/palm.png'); 
-    const coocnutImage = require('../img/palm.png');
-    //might not be best place to put images 1/11  
+    const coocnutImage = require('../img/coconut.png');
+    //might not be best place to is put images 1/11  
 
     return (
       <View style={styles.container}>
+        <TouchableOpacity onPress= {()=> this.handleClickedCoconut()} >
+           {/* placeholderforonPressEvent which lives inside TouchableOpacity Component */}
+          <View>
+            <Image  
+            style={{width: 50, height: 50}}
+            source={ coocnutImage }
+            /> 
+            <Text>Coconut Clicks {this.state.coconutCount}</Text>
+          </View>
+        </TouchableOpacity>
+        {/* step1 able to add touchable opacity as a string, transition now into an image */}
+        {/* step2 add click event to coconut so that every time you click on it, it updates the counter */}
         <Image
           style={{width: 200, height: 200}}
           source={ palmTreeImage }
