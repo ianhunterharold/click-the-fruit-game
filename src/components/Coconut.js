@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Image } from 'react-native';
 
 class Coconut extends Component {
 
   state = {
     '😃': '😃 Smiley',
-		'🚀': '🚀 Rocket',
-    '⚛️': '⚛️ Atom Symbol',
+    '🌴':null,
     'Clicks': 0
   }
 
@@ -21,11 +20,15 @@ class Coconut extends Component {
 
 
   render(){
+
+    const palmTreeImage = require('../../ios/img/palm.png'); 
+
     return (
-
-
       <View style={styles.container}>
-
+        <Image
+          style={{width: 200, height: 200}}
+          source={ palmTreeImage }
+        />
         <Button
           onPress={ () => {
             this.handlePressedButton()

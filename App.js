@@ -43,9 +43,6 @@ const App: () => React$Node = () => {
           )}
           <View>
             <Coconut />
-            <Coconut />
-            <Coconut />
-            <Coconut />
             
           {/* <View style={styles.body}>
             <View style={styles.sectionContainer}>
