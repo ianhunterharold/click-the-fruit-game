@@ -1,6 +1,7 @@
 console.log('Starting...');
 import React, {Component} from 'react';
 import Coconut from './src/components/Coconut';
+import CountdownTimer from './src/components/Countdown';
 
 import {
   StyleSheet,
@@ -40,6 +41,7 @@ const App: () => React$Node = () => {
       </View>
       <View style={styles.gameStatusBar}>
         <Coconut/>
+        <CountdownTimer/>
       </View>
     </ImageBackground>
   );
