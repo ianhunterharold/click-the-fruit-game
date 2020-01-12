@@ -20,8 +20,6 @@ cd ios/
 pod install
 cd ../
 npx react-native run-ios
-
-Run npm install react-native-countdown-component --save  
 ```
 
 Made with love <3
