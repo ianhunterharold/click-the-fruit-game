@@ -7,7 +7,6 @@
  */
 
 import React, {Component} from 'react';
-
 import Coconut from './src/components/Coconut';
 
 import {
@@ -42,7 +41,8 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View>
-            <Coconut />
+            <Coconut    
+            />
             
           {/* <View style={styles.body}>
             <View style={styles.sectionContainer}>
