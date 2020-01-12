@@ -1,7 +1,5 @@
 console.log('Starting...');
-
 import React, {Component} from 'react';
-
 import Coconut from './src/components/Coconut';
 
 import {
@@ -13,7 +11,6 @@ import {
   Dimensions
 } from 'react-native';
 
-
 // gather all images
 import bgImage from './src/img/background.png'
 import palm from './src/img/palm.png'
@@ -22,7 +19,6 @@ import coconut from './src/img/coconut.png'
 // get device dimentsion
 const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 console.log(WIDTH, HEIGHT);
-
 
 const App: () => React$Node = () => {
   return (
@@ -43,12 +39,11 @@ const App: () => React$Node = () => {
         <Image source={coconut} style={styles.coconutBunch4C} />
       </View>
       <View style={styles.gameStatusBar}>
-        <Text>Game status goes here</Text>
+        <Coconut/>
       </View>
     </ImageBackground>
   );
 };
-
 
 const styles = StyleSheet.create({
   backgroundContainer: {

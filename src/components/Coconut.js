@@ -1,55 +1,34 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
+
 
 class Coconut extends Component {
 
   state = {
-    '😃': '😃 Smiley',
-    'coconut':'string',
-    'clicks': 0
+    'coconutCount': 0
   }
 
-  handlePressedButton = () => {
-    var newCount = this.state.clicks + 1 
+  handleClickedCoconut = () => {
+    var newCoconutCount = this.state.coconutCount + 1
     this.setState({
-      'clicks': newCount
+      'coconutCount': newCoconutCount
     })
   }
 
-  // componentDidMount = () => {
-  //   this.updatingCoconutToImage();
-  // }
-
-  // updatingCoconutToImage = () => {
-  //   const coocnutImage = require('../../ios/img/coconut.png');
-  //   this.setState = {
-  //     'coconut' : coocnutImage
-  //   }
-  // }
-
   render(){
-
-    const palmTreeImage = require('../img/palm.png'); 
-    const coocnutImage = require('../img/palm.png');
+    
+    const coocnutImage = require('../img/coconut.png');
     //might not be best place to put images 1/11  
 
     return (
       <View style={styles.container}>
-        <Image
-          style={{width: 200, height: 200}}
-          source={ palmTreeImage }
-        />
-        <Image 
-          style={{width: 50, height: 50}}
-          source={ coocnutImage }
-        />
-        <Button
-          onPress={ () => {
-            this.handlePressedButton()
-          }}
-          title="Clicks"
-        />
-        <Text>Coconuts Collected {this.state.clicks}</Text>
+        <TouchableOpacity onPress={ ()=> this.handleClickedCoconut()} >
+            <Image 
+              style={{ width: 50, height: 50}}
+              source={ coocnutImage }
+            />
+        </TouchableOpacity>
+        <Text>{this.state.coconutCount}</Text>
 			</View>
     );
   }
@@ -57,7 +36,6 @@ class Coconut extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center'
 	}
