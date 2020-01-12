@@ -21,9 +21,6 @@ pod install
 cd ../
 npx react-native run-ios
 
-//coconut timer component
-npm install react-countdown-circle-timer
-npm install use-elapsed-time
 ```
 
 Made with love <3
