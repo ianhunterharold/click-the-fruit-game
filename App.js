@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Coconut from './src/components/Coconut';
 import Basket from './src/components/Basket';
 import TreeCoconut from './src/components/TreeCoconut';
+import InformationModal from './src/components/InformationModal';
 
 import {
   StyleSheet,
@@ -25,35 +26,38 @@ import basket from './src/img/basket.png'
 const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 console.log(WIDTH, HEIGHT);
 
-const App: () => React$Node = () => {
-  return (
-    <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-      <View style={styles.treeContainer}>
-        <Image source={palm} style={styles.palmTree} />
-        <TreeCoconut/>
-      </View>
-      <View style={styles.gameStatusBar}>
-        <Coconut/>
-        <View style={styles.basket}>
-          <Image source={basket} style={styles.basketImage} />
-          <View style={styles.basketCircle}>
-            <Basket/>
-            <Text style={styles.basketCount}></Text>
-          </View>
-          <View style={styles.basketCoconuts}>
-            <Image source={coconut} style={styles.basketCoconut1} />
-            <Image source={coconut} style={styles.basketCoconut2} />
-            <Image source={coconut} style={styles.basketCoconut3} />
-            <Image source={coconut} style={styles.basketCoconut4} />
-            <Image source={coconut} style={styles.basketCoconut5} />
-            <Image source={coconut} style={styles.basketCoconut6} />
-          </View>
+export default class App extends Component {
+  render() {
+    return (
+      <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+        <View style={styles.treeContainer}>
+          <Image source={palm} style={styles.palmTree} />
+          <TreeCoconut/>
         </View>
-        {/* <Text>Game status goes here</Text> */}
-      </View>
-    </ImageBackground>
-  );
-};
+        <View style={styles.gameStatusBar}>
+          <InformationModal/>
+          <Coconut/>
+          <View style={styles.basket}>
+            <Image source={basket} style={styles.basketImage} />
+            <View style={styles.basketCircle}>
+              <Basket/>
+              <Text style={styles.basketCount}></Text>
+            </View>
+            <View style={styles.basketCoconuts}>
+              <Image source={coconut} style={styles.basketCoconut1} />
+              <Image source={coconut} style={styles.basketCoconut2} />
+              <Image source={coconut} style={styles.basketCoconut3} />
+              <Image source={coconut} style={styles.basketCoconut4} />
+              <Image source={coconut} style={styles.basketCoconut5} />
+              <Image source={coconut} style={styles.basketCoconut6} />
+            </View>
+          </View>
+          {/* <Text>Game status goes here</Text> */}
+        </View>
+      </ImageBackground>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   backgroundContainer: {
@@ -187,5 +191,3 @@ const styles = StyleSheet.create({
     color: '#000'
   }
 });
-
-export default App;
