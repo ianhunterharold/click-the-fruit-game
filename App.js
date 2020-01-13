@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Coconut from './src/components/Coconut';
 import Basket from './src/components/Basket';
 import TreeCoconut from './src/components/TreeCoconut';
+import InformationModal from './src/components/InformationModal';
 
 import {
   StyleSheet,
@@ -34,8 +35,10 @@ export default class App extends Component{
           <TreeCoconut/>
         </View>
         <View style={styles.gameStatusBar}>
+          <InformationModal/>
           <Coconut handleClick={this.handleClickedCoconut}/>
           {/* passingdown my event listener via props might need to envoke it here */}
+
           <View style={styles.basket}>
             <Image source={basket} style={styles.basketImage} />
             <View style={styles.basketCircle}>
