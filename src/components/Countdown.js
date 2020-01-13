@@ -8,7 +8,6 @@ class CountdownTimer extends Component{
   }
 
   countingDownCoconutTime = () => {
-    
     var counter = 10;
     setInterval( () => { 
       counter--;

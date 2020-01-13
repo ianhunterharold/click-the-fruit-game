@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
-
+import CountdownTimer from './Countdown';
 
 class Coconut extends Component {
 
@@ -29,6 +29,9 @@ class Coconut extends Component {
             />
         </TouchableOpacity>
         <Text>{this.state.coconutCount}</Text>
+        <View>
+          <CountdownTimer/>
+        </View>
 			</View>
     );
   }
