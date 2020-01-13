@@ -5,8 +5,6 @@ import coconut from '../img/coconut.png'
 
 class TreeCoconut extends Component {
   
-
-
   render(){
     return(
       <View style={styles.coconutContainer}>
