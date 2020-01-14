@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
 
-class Coconut extends Component {
+class CoconutButton extends Component {
 
   state = {
     'time': 10
@@ -83,6 +83,6 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default Coconut;
+export default CoconutButton;
 
 
