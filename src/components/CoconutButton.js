@@ -7,10 +7,9 @@ class Coconut extends Component {
     'time': 10
   }
 
-  triggerTimerEvents(){
-    quantity = this.state.time;
-    if (quantity < 1){
-      // reset quantity back to 10
+  triggerTimerEvents(time){
+    if (time < 1){
+      // reset time back to 10
       this.setState({
         'time': 10
       })
@@ -20,35 +19,29 @@ class Coconut extends Component {
       // reset animation
 
       // ...
+    }else{
+      // update timer with new time
+      this.setState({
+        'time': time
+      })
     }
   }
 
   handleClickedCoconut = () => {
     // update countdown count
-    var newCount = this.state.time - 1
+    var newTime = this.state.time - 1
 
-    // set the state
-    this.setState({
-      'time': newCount
-    })
-
-    // trigger possible events now that the count has changed
-    this.triggerTimerEvents()
+    // trigger possible events
+    this.triggerTimerEvents(newTime)
   }
 
   countingDownCoconutTime = () => {
     setInterval( () => { 
       // update countdown count
-      var counter = this.state.time - 1
-      
-      // set the state
-      this.setState({
-        'time': counter
-      })
+      var newTime = this.state.time - 1
 
-      // trigger possible events now that the count has changed
-      this.triggerTimerEvents()
-      
+      // trigger possible events
+      this.triggerTimerEvents(newTime)
     }, 1000);
   }
 
@@ -84,5 +77,3 @@ const styles = StyleSheet.create({
 });
 
 export default Coconut;
-
-
