@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Coconut from './src/components/Coconut';
+import CoconutButton from './src/components/CoconutButton';
 import Basket from './src/components/Basket';
 import TreeCoconut from './src/components/TreeCoconut';
 import InformationModal from './src/components/InformationModal';
@@ -22,6 +22,7 @@ import coconut from './src/img/coconut.png'
 const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 
 export default class App extends Component{
+
   render(){
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
@@ -31,7 +32,7 @@ export default class App extends Component{
         </View>
         <View style={styles.gameStatusBar}>
           <InformationModal/>
-          <Coconut />
+          <CoconutButton />
           <Basket />
         </View>
       </ImageBackground>
