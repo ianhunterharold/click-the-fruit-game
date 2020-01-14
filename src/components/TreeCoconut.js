@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import coconut from '../img/coconut.png'
@@ -19,54 +18,54 @@ class TreeCoconut extends Component {
   render(){
     return(
       <View style={styles.coconutContainer}>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch1A} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch1B} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch1C} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch2A} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch2B} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch2C} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch3A} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch3B} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch3C} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch4A} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch4B} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={ ()=> 
-            this.handleClickedCoconut()} >
-            <Image source={coconut} style={styles.coconutBunch4C} />
-          </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch1A} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch1B} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch1C} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch2A} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch2B} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch2C} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch3A} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch3B} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch3C} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch4A} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch4B} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ ()=> 
+          this.handleClickedCoconut()} >
+          <Image source={coconut} style={styles.coconutBunch4C} />
+        </TouchableOpacity>
       </View>
     )
   }
