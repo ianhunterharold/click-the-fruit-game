@@ -23,17 +23,27 @@ const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 
 export default class App extends Component{
 
+  state = {
+    'coconutCountFromTreeCoconut': 0
+  }
+
+  getClicksFromTreeCoconut = (coconutClicks) => {
+    this.setState({
+      coconutCountFromTreeCoconut: coconutClicks
+    }) 
+  }
+
   render(){
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
         <View style={styles.treeContainer}>
           <Image source={palm} style={styles.palmTree} />
-          <TreeCoconut/>
+          <TreeCoconut callBackFromCocoNutTree={this.getClicksFromTreeCoconut}/>
         </View>
         <View style={styles.gameStatusBar}>
           <InformationModal/>
-          <CoconutButton />
-          <Basket />
+          <CoconutButton/>
+          <Basket coconutClicks={this.state.coconutCountFromTreeCoconut} />
         </View>
       </ImageBackground>
     )

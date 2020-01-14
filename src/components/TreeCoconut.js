@@ -5,10 +5,16 @@ import coconut from '../img/coconut.png'
 
 class TreeCoconut extends Component {
 
-  handleClickedCoconut = () => {
-    console.log("i clicked on the event lister")
+  state = {
+    'clickedCoconuts':0
   }
 
+  handleClickedCoconut = () => {
+    this.setState({
+      'clickedCoconuts': this.state.clickedCoconuts + 1 
+    })
+    this.props.callBackFromCocoNutTree(this.state.clickedCoconuts)
+  }
 
   render(){
     return(

@@ -7,16 +7,13 @@ import coconut from '../img/coconut.png'
 
 class Basket extends Component{
 
-  state={
-    treeCoconutCount: 0
-  }
-
   render(){
+    console.log(this.props, "inside of basket")
     return(
       <View style={styles.basket}>
         <Image source={basket} style={styles.basketImage} />
         <View style={styles.basketCircle}>
-          <Text style={styles.basketCount}>{this.state.treeCoconutCount}</Text>
+          <Text style={styles.basketCount}>{this.props.coconutClicks}</Text>
         </View>
         <View style={styles.basketCoconuts}>
           <Image source={coconut} style={styles.basketCoconut1} />
