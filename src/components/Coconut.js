@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
-// import CountdownTimer from './Countdown';
 
 class Coconut extends Component {
 
@@ -8,23 +7,48 @@ class Coconut extends Component {
     'time': 10
   }
 
+  triggerTimerEvents(){
+    quantity = this.state.time;
+    if (quantity < 1){
+      // reset quantity back to 10
+      this.setState({
+        'time': 10
+      })
+
+      // spawn new coconut (if available)
+
+      // reset animation
+
+      // ...
+    }
+  }
+
   handleClickedCoconut = () => {
-    var prevState = this.state.time 
+    // update countdown count
+    var newCount = this.state.time - 1
+
+    // set the state
     this.setState({
-      'time': prevState - 1
+      'time': newCount
     })
+
+    // trigger possible events now that the count has changed
+    this.triggerTimerEvents()
   }
 
   countingDownCoconutTime = () => {
-    var counter = 10;
     setInterval( () => { 
-      counter--;
+      // update countdown count
+      var counter = this.state.time - 1
+      
+      // set the state
       this.setState({
         'time': counter
       })
-      if (counter == 0){
-        counter = 10;
-      }
+
+      // trigger possible events now that the count has changed
+      this.triggerTimerEvents()
+      
     }, 1000);
   }
 
@@ -47,9 +71,6 @@ class Coconut extends Component {
             />
         </TouchableOpacity>
         <Text>{this.state.time}</Text>
-        <View>
-          {/* <CountdownTimer/> */}
-        </View>
 			</View>
     );
   }
