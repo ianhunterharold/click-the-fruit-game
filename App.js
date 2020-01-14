@@ -1,6 +1,6 @@
 console.log('Starting...');
 import React, {Component} from 'react';
-import Coconut from './src/components/Coconut';
+import CoconutButton from './src/components/CoconutButton';
 import Basket from './src/components/Basket';
 import TreeCoconut from './src/components/TreeCoconut';
 import InformationModal from './src/components/InformationModal';
@@ -26,6 +26,10 @@ const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 console.log(WIDTH, HEIGHT);
 
 export default class App extends Component{
+
+
+
+
   
   render(){
     return (
@@ -36,9 +40,7 @@ export default class App extends Component{
         </View>
         <View style={styles.gameStatusBar}>
           <InformationModal/>
-          <Coconut handleClick={this.handleClickedCoconut}/>
-          {/* passingdown my event listener via props might need to envoke it here */}
-
+          <CoconutButton handleClick={this.handleClickedCoconut}/>
           <View style={styles.basket}>
             <Image source={basket} style={styles.basketImage} />
             <View style={styles.basketCircle}>
