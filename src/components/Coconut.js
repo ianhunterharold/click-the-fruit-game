@@ -10,23 +10,25 @@ class Coconut extends Component {
 	state = {
     'visible': true,
     'worth': 1
-  };
+    };
 
   handleCoconutClick = () => {
-  	// hide the coconut
-  	this.setState({'visible': false});
+    // hide the coconut
+    this.setState({
+      'visible': false
+    });
 
-    // send collection count up to CoconutTree
-    this.props.callbackToCoconutTree(this.state.worth)
+    // send collection count & coconutId up to CoconutTree
+    this.props.callbackToCoconutTree(this.state.worth, this.props.id)
   }
-
 
 	render(){
 		if(this.state.visible){
-			output = <TouchableOpacity onPress={this.handleCoconutClick}><Image source={coconutImg} style={styles[this.props.id]} /></TouchableOpacity>;
+      output = <TouchableOpacity onPress={this.handleCoconutClick}><Image source={coconutImg} style={styles[this.props.id]} /></TouchableOpacity>;
 		}else{
 			output = <View></View>
-		}
+    }
+    
 
 		return(
 			<View>

@@ -8,7 +8,6 @@ import coconut from '../img/coconut.png'
 class Basket extends Component{
 
   render(){
-    console.log(this.props, "inside of basket")
     return(
       <View style={styles.basket}>
         <Image source={basket} style={styles.basketImage} />

@@ -15,10 +15,11 @@ const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 class CoconutTree extends Component {
 
   state = {
-    'collectedCoconuts': 0
+    'collectedCoconuts': 0,
+    'currentStateOfCoconuts': null
   }
 
-  handleCoconutClick = (worth) => {
+  handleCoconutClick = (worth, coconutId) => {
     // incrememnt number of coconuts collected for this level's state (the entire tree)
     var newCount = this.state.collectedCoconuts + worth
     this.setState({
@@ -26,14 +27,26 @@ class CoconutTree extends Component {
     }) 
 
     // tell the App level the new count (so it can give it to the basket)
-    this.props.callbackToApp(newCount)
+    this.props.callbackToApp(newCount, coconutId)
+  }
+
+  componentDidUpdate(prevProps) {
+    //must compare old props and new props or will spiral into infinite loop
+    // when props change, state is updated in coconut tree with the new state of all the clicked
+
+    if (this.props.coconutIdBoolean !== prevProps.coconutIdBoolean) {
+      this.setState({
+        'currentStateOfCoconuts':this.props.coconutIdBoolean
+      })
+    }
+    console.log(this.state.currentStateOfCoconuts,'current state of coconuts should be all of the updated states')
   }
 
   render(){
+
     return(
       <View style={styles.treeContainer}>
         <Image source={palm} style={styles.palmTree} />
-        
         <View style={styles.coconutsContainer}>
           <Coconut id="coconutBunch1A" callbackToCoconutTree={this.handleCoconutClick} />
           <Coconut id="coconutBunch1B" callbackToCoconutTree={this.handleCoconutClick} />
