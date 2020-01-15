@@ -48,18 +48,18 @@ class CoconutTree extends Component {
       <View style={styles.treeContainer}>
         <Image source={palm} style={styles.palmTree} />
         <View style={styles.coconutsContainer}>
-          <Coconut id="coconutBunch1A" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch1B" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch1C" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2A" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2B" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2C" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3A" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3B" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3C" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4A" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4B" callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4C" callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch1A" currentCoconutBoolens={this.state.currentStateOfCoconuts}   callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch1B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch1C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch2A" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch2B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch2C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch3A" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch3B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch3C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch4A" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch4B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch4C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
         </View>
       </View>
     )
