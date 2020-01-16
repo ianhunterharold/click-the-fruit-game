@@ -17,7 +17,7 @@ class CoconutTree extends Component {
   state = {
     'collectedCoconuts': 0,
     'currentStateOfCoconuts': this.props.coconutIdBoolean
-    //can i instantiate state with passed down props on creation? 1/16
+    //can i instanciate currentStateOfCoconuts with prop? 1/16
   }
 
   handleCoconutClick = (worth, coconutId) => {
@@ -29,6 +29,22 @@ class CoconutTree extends Component {
 
     // tell the App level the new count (so it can give it to the basket)
     this.props.callbackToApp(newCount, coconutId)
+    this.changeRenderOfCoconut()
+  }
+
+  changeRenderOfCoconut = () => {
+    let pizza = Math.floor(Math.random() * 12 + 1)
+
+
+    // change status at this level. 
+
+    
+    // take end number minus starting number, add one for rounding now, then add another one for rounding down. Above will result in random number from 1 - 12
+
+    // find coconut with that spot in this.state.currentStateOfCoconuts
+    // if the boolean at that coconut is not visible (iron this out more)
+    //render that coconut on the page again. 
+    console.log("inside of change render coconut")
   }
 
   componentDidUpdate(prevProps) {
@@ -36,7 +52,7 @@ class CoconutTree extends Component {
     // when props change, state is updated in coconut tree with the new state of all the clicked
     if (this.props.coconutIdBoolean !== prevProps.coconutIdBoolean) {
       this.setState({
-        'currentStateOfCoconuts':this.props.coconutIdBoolean
+        'currentStateOfCoconuts': this.props.coconutIdBoolean
       })
     }
   }

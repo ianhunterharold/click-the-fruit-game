@@ -19,33 +19,23 @@ class Coconut extends Component {
     });
     // send collection count & coconutId up to CoconutTree
     this.props.callbackToCoconutTree(this.state.worth, this.props.id)
+    console.log(this.props.currentCoconutBoolens)
     this.findFirstCoconutClickedInObject()
   }
-  
-  // const getKey = (obj,val) => Object.keys(obj).find(key => obj[key] === val);
 
   findFirstCoconutClickedInObject = () => {
     let newObjectFromState = this.props.currentCoconutBoolens 
-    let firstKeywhichSatisfiesValue = Object.keys(newObjectFromState).find(key => newObjectFromState[key] === true )
-    
-    return firstKeywhichSatisfiesValue
+    console.log(newObjectFromState,"inside coconut with state as object")
+    let firstKeyWhichSatisfiesValue = Object.keys(newObjectFromState).find(key => newObjectFromState[key] === true )
+    this.turnBackOnCoconut(firstKeyWhichSatisfiesValue)
+    return firstKeyWhichSatisfiesValue
   }
 
-  turnBackOnCoconut = () => { 
-
+  turnBackOnCoconut = (firstKeyWhichSatisfiesValue) => { 
+    //have value now that was most recently clicked. 
+    // now turn state back on toggle back the coconut
+    console.log(firstKeyWhichSatisfiesValue,"first value in array that was true")
   }
-
-  //   getKeyByValue=(object, value) {
-  //   return Object.keys(object).find(key => object[key] === value);
-  // }
-  
-    // console.log(keysOfPropsObject,"expeting keys for the object of props so true or false")
-    // return keysOfPropsObject.find(element => element === true)
-    // iterate through object of this.props.currentCoconutBoolens
-    // if value to the key is true, randomly select one to turn back on
-    // if false, ignore 
-  
-
   
 	render(){
 		if(this.state.visible){
