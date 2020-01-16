@@ -17,18 +17,42 @@ class Coconut extends Component {
     this.setState({
       'visible': false
     });
-
     // send collection count & coconutId up to CoconutTree
     this.props.callbackToCoconutTree(this.state.worth, this.props.id)
+    this.findFirstCoconutClickedInObject()
+  }
+  
+  // const getKey = (obj,val) => Object.keys(obj).find(key => obj[key] === val);
+
+  findFirstCoconutClickedInObject = () => {
+    let newObjectFromState = this.props.currentCoconutBoolens 
+    let firstKeywhichSatisfiesValue = Object.keys(newObjectFromState).find(key => newObjectFromState[key] === true )
+    
+    return firstKeywhichSatisfiesValue
   }
 
+  turnBackOnCoconut = () => { 
+
+  }
+
+  //   getKeyByValue=(object, value) {
+  //   return Object.keys(object).find(key => object[key] === value);
+  // }
+  
+    // console.log(keysOfPropsObject,"expeting keys for the object of props so true or false")
+    // return keysOfPropsObject.find(element => element === true)
+    // iterate through object of this.props.currentCoconutBoolens
+    // if value to the key is true, randomly select one to turn back on
+    // if false, ignore 
+  
+
+  
 	render(){
 		if(this.state.visible){
       output = <TouchableOpacity onPress={this.handleCoconutClick}><Image source={coconutImg} style={styles[this.props.id]} /></TouchableOpacity>;
 		}else{
-			output = <View></View>
+      output = <View></View>
     }
-    
 
 		return(
 			<View>

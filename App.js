@@ -49,7 +49,6 @@ export default class App extends Component{
   //callback from coconut button that says hey, we are at zero, spaw new loco cocos 
   appLevelSpawnCoconut = () => {
     var totalState = this.state
-    console.log("does this tick down with the clock at zero?")
   }
 
   render(){

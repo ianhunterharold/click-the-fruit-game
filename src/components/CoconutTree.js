@@ -16,7 +16,8 @@ class CoconutTree extends Component {
 
   state = {
     'collectedCoconuts': 0,
-    'currentStateOfCoconuts': null
+    'currentStateOfCoconuts': this.props.coconutIdBoolean
+    //can i instantiate state with passed down props on creation? 1/16
   }
 
   handleCoconutClick = (worth, coconutId) => {
@@ -33,13 +34,11 @@ class CoconutTree extends Component {
   componentDidUpdate(prevProps) {
     //must compare old props and new props or will spiral into infinite loop
     // when props change, state is updated in coconut tree with the new state of all the clicked
-
     if (this.props.coconutIdBoolean !== prevProps.coconutIdBoolean) {
       this.setState({
         'currentStateOfCoconuts':this.props.coconutIdBoolean
       })
     }
-    console.log(this.state.currentStateOfCoconuts,'current state of coconuts should be all of the updated states')
   }
 
   render(){
