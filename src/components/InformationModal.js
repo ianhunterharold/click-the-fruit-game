@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking} from 'react-native';
+import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking, Button} from 'react-native';
 
 
 class InformationModal extends Component{
@@ -38,6 +38,17 @@ class InformationModal extends Component{
 
             <View style={styles.author}>
               <Text style={styles.authors}>Created with ❤️ by <Text onPress={ ()=> Linking.openURL('https://brianshaffer.com') } style={styles.link}>Brian Shaffer</Text> & <Text onPress={ ()=> Linking.openURL('https://github.com/ianhunterharold') } style={styles.link}>Ian Hunter Harold</Text></Text>
+              
+              <Text onPress= { () => 
+                Linking.openURL('https://www.freepik.com/free-photos-vectors/background')}>
+                Background vector created by freepik - www.freepik.com
+              </Text>
+              <Text onPress= { () => 
+                Linking.openURL('https://pixabay.com/users/lethutrang101-6596164/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3121393')}>Image by Trang Le 
+                <Text onPress= { () => 
+                  Linking.openURL('https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=312139')}>From Pixabay
+                </Text>
+              </Text>
             </View>
           </View>
         </Modal>
@@ -46,7 +57,7 @@ class InformationModal extends Component{
           onPress={() => {
             this.setModalVisible(true);
           }}>
-          <Text>Info</Text>
+          <Text style={styles.aboutText}>👉🏿 About</Text>
         </TouchableHighlight>
       </View>
     );
@@ -95,7 +106,14 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		color: '#47b9c1',
 		fontWeight: 'bold'
-	}
+  },
+  aboutText: {
+		fontSize: 16,
+    color: '#000000',
+		fontWeight: 'bold',
+		textAlign: 'left'
+	},
+  
 
 });
 
