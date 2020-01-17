@@ -35,10 +35,6 @@ class CoconutTree extends Component {
   changeRenderOfCoconut = () => {
     let pizza = Math.floor(Math.random() * 12 + 1)
 
-
-    // change status at this level. 
-
-    
     // take end number minus starting number, add one for rounding now, then add another one for rounding down. Above will result in random number from 1 - 12
 
     // find coconut with that spot in this.state.currentStateOfCoconuts
