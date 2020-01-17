@@ -50,9 +50,16 @@ export default class App extends Component{
 
   // callback from coconut button to trigger coconut spawn
   appLevelSpawnCoconut = () => {
-    // randonly find 1 coconut to set as visible: ex] this.state.[coconutId] = true
+    // randonly find 1 coconut to set as visible
+    var currentState = this.state;
+    var invisibleCoconuts = Object.keys(currentState).filter(function(key) {
+      return currentState[key] === false;
+    });
+
+    var randomCoconut = invisibleCoconuts[Math.floor(Math.random() * invisibleCoconuts.length)];
+
     this.setState({
-      coconutBunch4A: true
+      [randomCoconut]: true
     });
   }
 
