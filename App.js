@@ -14,12 +14,7 @@ import bgImage from './src/img/background.png'
 import palm from './src/img/palm.png'
 import coconut from './src/img/coconut.png'
 
-<<<<<<< HEAD
 
-=======
-// get device dimentsion
-const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
->>>>>>> state-of-coconut-routed-to-app-then-down-to-counter
 export default class App extends Component{
 
   state = {
