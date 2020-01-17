@@ -20,8 +20,7 @@ cd ios/
 pod install
 cd ../
 npx react-native run-ios
-
-npm install react-native-pose
+npm install react-native-simple-animations --save
 
 ```
 
