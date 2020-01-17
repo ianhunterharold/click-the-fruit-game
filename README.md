@@ -21,6 +21,8 @@ pod install
 cd ../
 npx react-native run-ios
 
+npm install react-native-pose
+
 ```
 
 Made with love <3
