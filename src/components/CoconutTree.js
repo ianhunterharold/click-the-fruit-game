@@ -16,18 +16,11 @@ class CoconutTree extends Component {
     collectedCoconutCount: 0
   }
   
-  //state = this.props.treeVisibilityStatus;
-
-  // findFirstCoconutClickedInObject = () => {
-  //   let newObjectFromState = this.props.currentCoconutBoolens 
-  //   console.log(newObjectFromState,"inside coconut with state as object")
-  //   let firstKeyWhichSatisfiesValue = Object.keys(newObjectFromState).find(key => newObjectFromState[key] === true )
-  //   this.turnBackOnCoconut(firstKeyWhichSatisfiesValue)
-  //   return firstKeyWhichSatisfiesValue
-  // }
-
   handleCoconutClick = (worth, coconutId) => {
     // incrememnt number of coconuts collected for this level's state (the entire tree)
+    var matched = Object.keys(o).filter(function(key) {
+      return o[key] === 'espn.com';
+    });
     var newCount = this.state.collectedCoconutCount + worth
     this.setState({
       collectedCoconutCount: newCount
