@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking} from 'react-native';
+import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking, Button} from 'react-native';
 
 
 class InformationModal extends Component{
@@ -46,7 +46,7 @@ class InformationModal extends Component{
           onPress={() => {
             this.setModalVisible(true);
           }}>
-          <Text>Info</Text>
+          <Text style={styles.aboutText}>👉🏿 About</Text>
         </TouchableHighlight>
       </View>
     );
@@ -95,7 +95,14 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		color: '#47b9c1',
 		fontWeight: 'bold'
-	}
+  },
+  aboutText: {
+		fontSize: 16,
+    color: '#000000',
+		fontWeight: 'bold',
+		textAlign: 'left'
+	},
+  
 
 });
 
