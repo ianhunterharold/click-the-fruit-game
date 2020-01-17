@@ -1,6 +1,6 @@
 // import React
 import React, { Component } from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { View, Image } from 'react-native';
 
 // import custom components
 import Coconut from './Coconut';
@@ -12,44 +12,29 @@ import palm from '../img/palm.png'
 
 
 class CoconutTree extends Component {
-
-  state = {
-    'collectedCoconuts': 0,
-    'currentStateOfCoconuts': this.props.coconutIdBoolean
-    //can i instanciate currentStateOfCoconuts with prop? 1/16
+  state={
+    collectedCoconutCount: 0
   }
+  
+  //state = this.props.treeVisibilityStatus;
+
+  // findFirstCoconutClickedInObject = () => {
+  //   let newObjectFromState = this.props.currentCoconutBoolens 
+  //   console.log(newObjectFromState,"inside coconut with state as object")
+  //   let firstKeyWhichSatisfiesValue = Object.keys(newObjectFromState).find(key => newObjectFromState[key] === true )
+  //   this.turnBackOnCoconut(firstKeyWhichSatisfiesValue)
+  //   return firstKeyWhichSatisfiesValue
+  // }
 
   handleCoconutClick = (worth, coconutId) => {
     // incrememnt number of coconuts collected for this level's state (the entire tree)
-    var newCount = this.state.collectedCoconuts + worth
+    var newCount = this.state.collectedCoconutCount + worth
     this.setState({
-      collectedCoconuts: newCount
+      collectedCoconutCount: newCount
     }) 
 
     // tell the App level the new count (so it can give it to the basket)
     this.props.callbackToApp(newCount, coconutId)
-    this.changeRenderOfCoconut()
-  }
-
-  changeRenderOfCoconut = () => {
-    let pizza = Math.floor(Math.random() * 12 + 1)
-
-    // take end number minus starting number, add one for rounding now, then add another one for rounding down. Above will result in random number from 1 - 12
-
-    // find coconut with that spot in this.state.currentStateOfCoconuts
-    // if the boolean at that coconut is not visible (iron this out more)
-    //render that coconut on the page again. 
-    console.log("inside of change render coconut")
-  }
-
-  componentDidUpdate(prevProps) {
-    //must compare old props and new props or will spiral into infinite loop
-    // when props change, state is updated in coconut tree with the new state of all the clicked
-    if (this.props.coconutIdBoolean !== prevProps.coconutIdBoolean) {
-      this.setState({
-        'currentStateOfCoconuts': this.props.coconutIdBoolean
-      })
-    }
   }
 
   render(){
@@ -57,18 +42,18 @@ class CoconutTree extends Component {
     return(
       <View style={customStyles.treeContainer}>
         <Image source={palm} style={customStyles.palmTree} />
-          <Coconut id="coconutBunch1A" currentCoconutBoolens={this.state.currentStateOfCoconuts}   callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch1B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch1C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2A" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3A" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4A" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4B" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4C" currentCoconutBoolens={this.state.currentStateOfCoconuts}  callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch1A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch1A} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch1B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch1B} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch1C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch1C} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch2A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch2A} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch2B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch2B} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch2C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch2C} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch3A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch3A} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch3B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch3B} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch3C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch3C} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch4A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch4A} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch4B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch4B} callbackToCoconutTree={this.handleCoconutClick} />
+          <Coconut id="coconutBunch4C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch4C} callbackToCoconutTree={this.handleCoconutClick} />
       </View>
     )
   }

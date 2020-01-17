@@ -1,6 +1,6 @@
 // import React
 import React, {Component} from 'react';
-import { View, Image, Text, ImageBackground } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 
 // import custom components
 import CoconutButton from './src/components/CoconutButton';
@@ -19,42 +19,47 @@ export default class App extends Component{
 
   state = {
     'collectedCoconutCount': 0,
-    'coconutBunch1A': false,
-    'coconutBunch1B': false,
-    'coconutBunch1C': false,
-    'coconutBunch2A': false,
-    'coconutBunch2B': false,
-    'coconutBunch2C': false,
-    'coconutBunch3A': false,
-    'coconutBunch3B': false,
-    'coconutBunch3C': false,
+    'coconutBunch1A': true,
+    'coconutBunch1B': true,
+    'coconutBunch1C': true,
+    'coconutBunch2A': true,
+    'coconutBunch2B': true,
+    'coconutBunch2C': true,
+    'coconutBunch3A': true,
+    'coconutBunch3B': true,
+    'coconutBunch3C': true,
     'coconutBunch4A': false,
     'coconutBunch4B': false,
     'coconutBunch4C': false
-        //all individual coconut states
   }
+
+
 
   // collects clicks from <CoconutTree />
   collectClick = (coconutClicks, coconutId) => {
+    // updates total clicks
     this.setState({
       collectedCoconutCount: coconutClicks
     })
 
+    // hides the clicked coconut
     this.setState({
-      [coconutId]: true
-      //true meaning that the coconut has been clicked and it disapears
+      [coconutId]: false
     })
   }
 
-  //callback from coconut button that says hey, we are at zero, spaw new loco cocos 
+  // callback from coconut button to trigger coconut spawn
   appLevelSpawnCoconut = () => {
-    var totalState = this.state
+    // randonly find 1 coconut to set as visible: ex] this.state.[coconutId] = true
+    this.setState({
+      coconutBunch4A: true
+    });
   }
 
   render(){
     return (
       <ImageBackground source={bgImage} style={customStyles.backgroundContainer}>
-        <CoconutTree callbackToApp={this.collectClick} coconutIdBoolean={this.state} />
+        <CoconutTree callbackToApp={this.collectClick} treeVisibilityStatus={this.state} />
         <View style={customStyles.gameStatusBar}>
           <InformationModal/>
           <CoconutButton callBackToAppSpawningNewCoconut={this.appLevelSpawnCoconut}/>

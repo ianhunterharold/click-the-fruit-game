@@ -10,19 +10,14 @@ class CoconutButton extends Component {
   triggerTimerEvents(time){
     if (time < 1){
       
-      
-
       // reset time back to 10
       this.setState({
         'time': 10
       })
 
-      this.spawnNewCoconut()
       // spawn new coconut (if available)
-    
-      // reset animation
-
-      // ...
+      this.props.callBackToAppSpawningNewCoconut()
+      
     }else{
       // update timer with new time
       this.setState({
@@ -47,10 +42,6 @@ class CoconutButton extends Component {
       // trigger possible events
       this.triggerTimerEvents(newTime)
     }, 1000);
-  }
-
-  spawnNewCoconut = () => {
-    this.props.callBackToAppSpawningNewCoconut()
   }
 
   componentDidMount(){
