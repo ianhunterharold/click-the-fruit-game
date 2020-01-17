@@ -161,7 +161,6 @@
 				89F9F883E234F74A67AC00D2 /* Pods-CoconutsprojectTests.debug.xcconfig */,
 				E20A190353DFB96DAD08FEC2 /* Pods-CoconutsprojectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
