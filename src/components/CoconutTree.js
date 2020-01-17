@@ -18,9 +18,6 @@ class CoconutTree extends Component {
   
   handleCoconutClick = (worth, coconutId) => {
     // incrememnt number of coconuts collected for this level's state (the entire tree)
-    var matched = Object.keys(o).filter(function(key) {
-      return o[key] === 'espn.com';
-    });
     var newCount = this.state.collectedCoconutCount + worth
     this.setState({
       collectedCoconutCount: newCount
