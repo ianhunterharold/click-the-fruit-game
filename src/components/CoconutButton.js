@@ -58,7 +58,7 @@ class CoconutButton extends Component {
         <TouchableOpacity onPress={ ()=> 
           this.handleClickedCoconut()} >
             <Image 
-              style={{ width: 50, height: 50}}
+              style={{ width: 46, height: 50}}
               source={ coocnutImage }
             />
         </TouchableOpacity>

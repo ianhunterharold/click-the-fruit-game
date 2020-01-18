@@ -8,6 +8,7 @@ import Basket from './src/components/Basket';
 import CoconutTree from './src/components/CoconutTree';
 import InformationModal from './src/components/InformationModal';
 import customStyles from './src/components/customStyles';
+import { SimpleAnimation } from 'react-native-simple-animations';
 
 // gather images
 import bgImage from './src/img/background.png'
@@ -41,11 +42,12 @@ export default class App extends Component{
     this.setState({
       collectedCoconutCount: coconutClicks
     })
-
     // hides the clicked coconut
     this.setState({
       [coconutId]: false
     })
+
+
   }
 
   // callback from coconut button to trigger coconut spawn

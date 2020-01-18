@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import customStyles from './customStyles';
+import { SimpleAnimation } from 'react-native-simple-animations';
 
 
 // import images
 import basket from '../img/basket.png'
 import coconut from '../img/coconut.png'
 
+
+
 class Basket extends Component{
 
   render(){
+
     return(
+      <>
+        
       <View style={customStyles.basket}>
         <Image source={basket} style={customStyles.basketImage} />
-        <View style={customStyles.basketCircle}>
+          <View style={customStyles.basketCircle}>
           <Text style={customStyles.basketCount}>{this.props.coconutClicks}</Text>
         </View>
         <View style={customStyles.basketCoconuts}>
@@ -25,6 +31,7 @@ class Basket extends Component{
           <Image source={coconut} style={customStyles.basketCoconut6} />
         </View>
       </View>
+      </>
     )
   }
 }
