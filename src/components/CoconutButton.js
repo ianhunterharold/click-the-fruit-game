@@ -94,8 +94,6 @@ const styles = StyleSheet.create({
 	container: {
 		alignItems: 'center',
     marginTop: -7,
-    position: 'relative',
-    zIndex: 1
 	},
   time: {
     position: 'absolute',

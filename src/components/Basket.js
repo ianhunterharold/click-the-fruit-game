@@ -7,21 +7,6 @@ import customStyles from './customStyles';
 import basket from '../img/basket.png'
 import coconut from '../img/coconut.png'
 
-// get dimensions
-const {width: WIDTH, height: HEIGHT} = Dimensions.get('window');
-
-// set static tree sizes depending on device dimensions
-if((HEIGHT - 100) > 750){ // 100 is status bar height
-  var treeHeight = 642;
-}else{
-  var treeHeight = 500;
-}
-var treeWidth = treeHeight * 0.556;
-var treeOffset = (WIDTH - treeWidth)/2;
-var coconutWidth = treeWidth * 0.13;
-var coconutHeight = coconutWidth * 1.08;
-
-
 
 class Basket extends Component{
   constructor () {
@@ -49,13 +34,13 @@ class Basket extends Component{
   
   render(){
     return(
-      <View style={{ width: 180, height: 76, position: 'absolute', top: treeHeight + 50, right: treeOffset, alignItems: 'center' }}>
+      <View style={customStyles.basket}>
         <Image source={basket} style={customStyles.basketImage} />
 
         <Animated.View style={{ transform: [{scale: this.springValue}], position: 'absolute', alignItems: 'center', justifyContent: 'center', zIndex: 3 }}>
-        <View style={customStyles.basketCircle}>
-          <Text style={customStyles.basketCount}>{this.props.coconutClicks}</Text>
-        </View>
+          <View style={customStyles.basketCircle}>
+            <Text style={customStyles.basketCount}>{this.props.coconutClicks}</Text>
+          </View>
         </Animated.View>
         <View style={customStyles.basketCoconuts}>
           <Image source={coconut} style={customStyles.basketCoconut1} />
