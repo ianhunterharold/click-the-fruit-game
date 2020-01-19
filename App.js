@@ -67,10 +67,10 @@ export default class App extends Component{
     return (
       <ImageBackground source={bgImage} style={customStyles.backgroundContainer}>
         <CoconutTree callbackToApp={this.collectClick} treeVisibilityStatus={this.state} />
+        <Basket coconutClicks={this.state.collectedCoconutCount} />
         <View style={customStyles.gameStatusBar}>
-          <InformationModal/>
           <CoconutButton callBackToAppSpawningNewCoconut={this.appLevelSpawnCoconut}/>
-          <Basket coconutClicks={this.state.collectedCoconutCount} />
+          <InformationModal/>
         </View>
       </ImageBackground>
     )

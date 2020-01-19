@@ -13,7 +13,7 @@ class InformationModal extends Component{
 
   render() {
     return (
-      <View>
+      <View style={{zIndex: 2}}>
         <Modal
           animationType="slide"
           transparent={false}
@@ -56,8 +56,8 @@ class InformationModal extends Component{
         <TouchableHighlight
           onPress={() => {
             this.setModalVisible(true);
-          }}>
-          <Text style={styles.aboutText}>👉🏿 About</Text>
+          }} style={styles.aboutButton}>
+          <Text style={styles.aboutText}>i</Text>
         </TouchableHighlight>
       </View>
     );
@@ -107,12 +107,25 @@ const styles = StyleSheet.create({
 		color: '#47b9c1',
 		fontWeight: 'bold'
   },
-  aboutText: {
-		fontSize: 16,
-    color: '#000000',
-		fontWeight: 'bold',
-		textAlign: 'left'
-	},
+  aboutButton: {
+    position: 'absolute',
+    width: 30,
+    height: 30,
+    left: 10,
+    bottom: 10,
+    backgroundColor: '#FFF',
+    borderRadius: 30/2,
+    borderColor: '#47b9c1',
+    borderStyle: 'solid',
+    borderWidth: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  aboutButtonText: {
+    fontSize: 15,
+    color: '#47b9c1',
+    fontWeight: 'bold'
+  },
   
 
 });

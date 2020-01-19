@@ -28,7 +28,7 @@ export default StyleSheet.create({
   gameStatusBar: {
     backgroundColor: 'rgba(63, 182, 191, 0.7)',
     width: WIDTH,
-    height: 100,
+    height: 110,
     position: 'absolute',
     bottom: 0,
     left: 0
@@ -133,11 +133,11 @@ export default StyleSheet.create({
     zIndex: 10,
   },
   basket: {
-    width: '35%',
-    height: 70,
+    width: 180,
+    height: 76,
     position: 'absolute',
-    bottom: 14,
-    right: 10,
+    top: treeHeight + 50,
+    right: treeOffset,
     alignItems: 'center',
   },
   basketCoconuts: {
@@ -148,15 +148,16 @@ export default StyleSheet.create({
     width: '100%'
   },
   basketCoconut1: {
-    width: 46,
-    height: 50,
+    width: 55.2,
+    height: 60,
     position: 'absolute',
     top: 10,
+    left: 10,
     zIndex: 3
   },
   basketCoconut2: {
-    width: 46,
-    height: 50,
+    width: 55.2,
+    height: 60,
     position: 'absolute',
     top: 0,
     left: 22,
@@ -164,8 +165,8 @@ export default StyleSheet.create({
     zIndex: 4
   },
   basketCoconut3: {
-    width: 46,
-    height: 50,
+    width: 55.2,
+    height: 60,
     position: 'absolute',
     top: 0,
     left: 44,
@@ -173,8 +174,8 @@ export default StyleSheet.create({
     zIndex: 3
   },
   basketCoconut4: {
-    width: 46,
-    height: 50,
+    width: 55.2,
+    height: 60,
     position: 'absolute',
     top: 8,
     left: 66,
@@ -182,20 +183,20 @@ export default StyleSheet.create({
     zIndex: 4
   },
   basketCoconut5: {
-    width: 46,
-    height: 50,
+    width: 55.2,
+    height: 60,
     position: 'absolute',
     top: 0,
-    left: 85,
+    right: 20,
     transform: [{ rotate: '35deg' }],
     zIndex: 3
   },
   basketCoconut6: {
-    width: 46,
-    height: 50,
+    width: 55.2,
+    height: 60,
     position: 'absolute',
     top: 5,
-    right: 0,
+    right: 8,
     transform: [{ rotate: '70deg' }],
     zIndex: 4
   },

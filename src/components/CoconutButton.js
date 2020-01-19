@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+
+
+const coconut1 = require('../img/coconut-1.png');
+const coconut2 = require('../img/coconut-2.png');
+const coconut3 = require('../img/coconut-3.png');
+const coconut4 = require('../img/coconut-4.png');
+const coconut5 = require('../img/coconut-5.png');
 
 class CoconutButton extends Component {
 
   state = {
-    'time': 10
+    'time': 10,
+    'currentCoconut': coconut1
   }
 
   triggerTimerEvents(time){
     if (time < 1){
+      time = 10; // force local variable to 10 for ripeness reset
       
       // reset time back to 10
       this.setState({
@@ -24,6 +33,18 @@ class CoconutButton extends Component {
         'time': time
       })
     }
+
+    if(time > 8){
+      this.setState({ 'currentCoconut': coconut1 });
+    }else if(time > 6){
+      this.setState({ 'currentCoconut': coconut2 });
+    }else if(time > 4){
+      this.setState({ 'currentCoconut': coconut3 });
+    }else if(time > 2){
+      this.setState({ 'currentCoconut': coconut4 });
+    }else if(time >= 0){
+      this.setState({ 'currentCoconut': coconut5 });
+    }
   }
 
   handleClickedCoconut = () => {
@@ -32,6 +53,7 @@ class CoconutButton extends Component {
 
     // trigger possible events
     this.triggerTimerEvents(newTime)
+
   }
 
   countingDownCoconutTime = () => {
@@ -49,20 +71,20 @@ class CoconutButton extends Component {
   }
 
   render(){
-    
-    const coocnutImage = require('../img/coconut.png');
-    //might not be best place to put images 1/11  
-
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={ ()=> 
-          this.handleClickedCoconut()} >
-            <Image 
-              style={{ width: 50, height: 50}}
-              source={ coocnutImage }
-            />
+        <TouchableOpacity 
+          onPress={ ()=> this.handleClickedCoconut() }
+          activeOpacity={0.8} 
+          >
+            <View>
+              <Image 
+              style={{ width: 96.6, height: 105}}
+              source={ this.state.currentCoconut }
+              />
+              <Text style={styles.time}>{this.state.time}</Text>
+            </View>
         </TouchableOpacity>
-        <Text>{this.state.time}</Text>
 			</View>
     );
   }
@@ -70,9 +92,20 @@ class CoconutButton extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+    marginTop: -7,
+    position: 'relative',
+    zIndex: 1
+	},
+  time: {
+    position: 'absolute',
+    top: 28,
+    width: 96.6,
+    textAlign: 'center',
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 30
+  }
 });
 
 export default CoconutButton;
