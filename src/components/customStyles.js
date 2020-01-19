@@ -214,7 +214,7 @@ export default StyleSheet.create({
     borderColor: 'rgba(232, 90, 80, 1)',
     borderStyle: 'solid',
     borderWidth: 3,
-    position: 'absolute',
+    // position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: 'rgba(191, 114, 42, 0.7)',
@@ -224,7 +224,7 @@ export default StyleSheet.create({
     },
     shadowRadius: 2,
     shadowOpacity: 1,
-    zIndex: 3
+    // zIndex: 3
   },
   basketCount: {
     fontSize: 20,
