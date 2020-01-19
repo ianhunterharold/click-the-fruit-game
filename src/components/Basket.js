@@ -21,8 +21,6 @@ var treeOffset = (WIDTH - treeWidth)/2;
 var coconutWidth = treeWidth * 0.13;
 var coconutHeight = coconutWidth * 1.08;
 
-
-
 class Basket extends Component{
   constructor () {
     super()
@@ -46,12 +44,10 @@ class Basket extends Component{
     }
   }
 
-  
   render(){
     return(
       <View style={{ width: 180, height: 76, position: 'absolute', top: treeHeight + 50, right: treeOffset, alignItems: 'center' }}>
         <Image source={basket} style={customStyles.basketImage} />
-
         <Animated.View style={{ transform: [{scale: this.springValue}], position: 'absolute', alignItems: 'center', justifyContent: 'center', zIndex: 3 }}>
         <View style={customStyles.basketCircle}>
           <Text style={customStyles.basketCount}>{this.props.coconutClicks}</Text>

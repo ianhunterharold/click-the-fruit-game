@@ -8,6 +8,7 @@ import Basket from './src/components/Basket';
 import CoconutTree from './src/components/CoconutTree';
 import InformationModal from './src/components/InformationModal';
 import customStyles from './src/components/customStyles';
+import Loading from './src/components/Loading';
 
 // gather images
 import bgImage from './src/img/background.png'
@@ -65,6 +66,8 @@ export default class App extends Component{
 
   render(){
     return (
+      <>
+      {/* <Loading/> */}
       <ImageBackground source={bgImage} style={customStyles.backgroundContainer}>
         <CoconutTree callbackToApp={this.collectClick} treeVisibilityStatus={this.state} />
         <Basket coconutClicks={this.state.collectedCoconutCount} />
@@ -73,6 +76,7 @@ export default class App extends Component{
           <InformationModal/>
         </View>
       </ImageBackground>
+      </>
     )
   }
 }

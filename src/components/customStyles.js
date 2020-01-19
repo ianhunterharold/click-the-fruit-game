@@ -229,5 +229,15 @@ export default StyleSheet.create({
   basketCount: {
     fontSize: 20,
     color: '#000'
+  },
+  loadingCoconutContainer:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    height: '100%'
+  },
+  loadingCoconut: {
+    width: 96,
+    height: 105,
   }
 });
