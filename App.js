@@ -1,6 +1,6 @@
 // import React
 import React, {Component} from 'react';
-import { View, ImageBackground } from 'react-native';
+import { View, ImageBackground, Text, Animated } from 'react-native';
 
 // import custom components
 import CoconutButton from './src/components/CoconutButton';
@@ -8,7 +8,6 @@ import Basket from './src/components/Basket';
 import CoconutTree from './src/components/CoconutTree';
 import InformationModal from './src/components/InformationModal';
 import customStyles from './src/components/customStyles';
-import { SimpleAnimation } from 'react-native-simple-animations';
 
 // gather images
 import bgImage from './src/img/background.png'
