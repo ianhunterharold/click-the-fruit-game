@@ -1,6 +1,7 @@
 // import React
 import React, {Component} from 'react';
 import { View, ImageBackground } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // import custom components
 import CoconutButton from './src/components/CoconutButton';
@@ -17,7 +18,6 @@ import coconut from './src/img/coconut.png'
 
 
 export default class App extends Component{
-
   state = {
     'collectedCoconutCount': 0,
     'coconutBunch1A': true,
@@ -34,6 +34,20 @@ export default class App extends Component{
     'coconutBunch4C': false
   }
 
+  getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@collectedCoconutCount')
+      if(value !== null) {
+        // value previously stored
+        console.log(value);
+        this.setState({
+          collectedCoconutCount: parseInt(value)
+        });
+      }
+    } catch(e) {
+      // error reading value
+    }
+  }
 
 
   // collects clicks from <CoconutTree />
@@ -42,6 +56,21 @@ export default class App extends Component{
     this.setState({
       collectedCoconutCount: coconutClicks
     })
+
+    // stores asyncronously
+    storeData = async () => {
+      try {
+        await AsyncStorage.setItem('@collectedCoconutCount', `${coconutClicks}`);
+        console.log('async stored new coconutClicks count');
+      } catch (e) {
+        // saving error
+        console.log('error with async storage');
+      }
+    }
+    storeData();
+
+
+    console.log('collectClick');
 
     // hides the clicked coconut
     this.setState({
@@ -62,6 +91,10 @@ export default class App extends Component{
     this.setState({
       [randomCoconut]: true
     });
+  }
+
+  componentDidMount(){
+    this.getData();
   }
 
   render(){

@@ -1,6 +1,7 @@
 // import React
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // import custom components
 import Coconut from './Coconut';
@@ -15,6 +16,21 @@ class CoconutTree extends Component {
   state={
     collectedCoconutCount: 0
   }
+
+  getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@collectedCoconutCount')
+      if(value !== null) {
+        // value previously stored
+        console.log(value);
+        this.setState({
+          collectedCoconutCount: parseInt(value)
+        });
+      }
+    } catch(e) {
+      // error reading value
+    }
+  }
   
   handleCoconutClick = (worth, coconutId) => {
     // incrememnt number of coconuts collected for this level's state (the entire tree)
@@ -25,6 +41,10 @@ class CoconutTree extends Component {
 
     // tell the App level the new count (so it can give it to the basket)
     this.props.callbackToApp(newCount, coconutId)
+  }
+
+  componentDidMount(){
+    this.getData();
   }
 
   render(){
