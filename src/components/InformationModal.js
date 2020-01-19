@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking, Button} from 'react-native';
+import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking, Button, Image} from 'react-native';
+
+
+const logo = require('../img/coco-loco-logo.png');
 
 
 class InformationModal extends Component{
@@ -29,22 +32,20 @@ class InformationModal extends Component{
           </TouchableHighlight>
           <View style={styles.modalContainer}>
           	<View style={styles.main}>
-	            <Text style={styles.logo}>🥥 Coco Loco 🌴</Text>
-	            <Text style={{textAlign: 'center'}}>Grow your own coconut tree and harvest the fruit. I hear the flesh is super tasty 😃</Text>
-
+	            <Image source={logo} />
   	          <Text style={{textAlign: 'center', marginTop: 40, fontSize: 20, color: '#47b9c1', fontWeight: 'bold', marginBottom: 3}} onPress={ ()=> Linking.openURL('https://brianshaffer.com/cocoloco-store-redirect') }>Rate Us</Text>
     	        <Text style={{textAlign: 'center', marginBottom: 20}} onPress={ ()=> Linking.openURL('https://brianshaffer.com/cocoloco-store-redirect') }>⭐️⭐️⭐️⭐️⭐️</Text>
     	      </View>
 
             <View style={styles.author}>
-              <Text style={styles.authors}>Created with ❤️ by <Text onPress={ ()=> Linking.openURL('https://brianshaffer.com') } style={styles.link}>Brian Shaffer</Text> & <Text onPress={ ()=> Linking.openURL('https://github.com/ianhunterharold') } style={styles.link}>Ian Hunter Harold</Text></Text>
+              <Text style={styles.authors}>Created by <Text onPress={ ()=> Linking.openURL('https://brianshaffer.com') } style={styles.link}>Brian Shaffer</Text> & <Text onPress={ ()=> Linking.openURL('https://github.com/ianhunterharold') } style={styles.link}>Ian Hunter Harold</Text></Text>
               
               <Text onPress= { () => 
-                Linking.openURL('https://www.freepik.com/free-photos-vectors/background')}>
-                Background vector created by freepik - www.freepik.com
+                Linking.openURL('https://www.freepik.com/free-photos-vectors/background')} style={{textAlign: 'center'}}>
+                Images provided by freepik.com
               </Text>
               <Text onPress= { () => 
-                Linking.openURL('https://pixabay.com/users/lethutrang101-6596164/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3121393')}>Image by Trang Le 
+                Linking.openURL('https://pixabay.com/users/lethutrang101-6596164/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3121393')} style={{textAlign: 'center'}}>Background graphic by Trang Le 
                 <Text onPress= { () => 
                   Linking.openURL('https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=312139')}>From Pixabay
                 </Text>
@@ -78,7 +79,8 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold'
 	},
 	authors: {
-		marginTop: 100
+		marginTop: 20,
+    marginBottom: 4
 	},
 	modalContainer: {
 		flex: 1,
