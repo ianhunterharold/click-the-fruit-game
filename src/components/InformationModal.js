@@ -16,7 +16,7 @@ class InformationModal extends Component{
 
   render() {
     return (
-      <View style={{zIndex: 2}}>
+      <View>
         <Modal
           animationType="slide"
           transparent={false}
@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     height: 30,
     left: 10,
     bottom: 10,
+    zIndex: 2,
     backgroundColor: '#FFF',
     borderRadius: 30/2,
     borderColor: '#47b9c1',

@@ -72,8 +72,10 @@ export default class App extends Component{
         <CoconutTree callbackToApp={this.collectClick} treeVisibilityStatus={this.state} />
         <Basket coconutClicks={this.state.collectedCoconutCount} />
         <View style={customStyles.gameStatusBar}>
-          <CoconutButton callBackToAppSpawningNewCoconut={this.appLevelSpawnCoconut}/>
-          <InformationModal/>
+          <View style={{position: 'relative'}}>
+            <CoconutButton callBackToAppSpawningNewCoconut={this.appLevelSpawnCoconut}/>
+            <InformationModal/>
+          </View>
         </View>
       </ImageBackground>
       </>

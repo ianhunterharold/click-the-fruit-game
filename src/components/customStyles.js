@@ -7,14 +7,21 @@ const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 // set static tree sizes depending on device dimensions
 if((HEIGHT - 100) > 750){ // 100 is status bar height
   var treeHeight = 642;
+  var basketVerticalOffset = 50;
 }else{
   var treeHeight = 500;
+  var basketVerticalOffset = -40;
 }
 var treeWidth = treeHeight * 0.556;
 var treeOffset = (WIDTH - treeWidth)/2;
 var coconutWidth = treeWidth * 0.13;
 var coconutHeight = coconutWidth * 1.08;
 
+if((HEIGHT - 100) > 750){
+  var basketHorizontalOffset = treeOffset;
+}else{
+  var basketHorizontalOffset = treeOffset - 20;
+}
 
 
 // create the style sheet rules
@@ -133,11 +140,11 @@ export default StyleSheet.create({
     zIndex: 10,
   },
   basket: {
-    width: 180,
-    height: 76,
+    width: coconutWidth * 4,
+    height: (coconutWidth * 4) * 0.422,
     position: 'absolute',
-    top: treeHeight + 50,
-    right: treeOffset,
+    top: treeHeight + basketVerticalOffset,
+    right: basketHorizontalOffset,
     alignItems: 'center',
   },
   basketCoconuts: {
@@ -148,16 +155,16 @@ export default StyleSheet.create({
     width: '100%'
   },
   basketCoconut1: {
-    width: 55.2,
-    height: 60,
+    width: coconutWidth * 1.3,
+    height: coconutHeight * 1.3,
     position: 'absolute',
     top: 10,
     left: 10,
     zIndex: 3
   },
   basketCoconut2: {
-    width: 55.2,
-    height: 60,
+    width: coconutWidth * 1.3,
+    height: coconutHeight * 1.3,
     position: 'absolute',
     top: 0,
     left: 22,
@@ -165,8 +172,8 @@ export default StyleSheet.create({
     zIndex: 4
   },
   basketCoconut3: {
-    width: 55.2,
-    height: 60,
+    width: coconutWidth * 1.3,
+    height: coconutHeight * 1.3,
     position: 'absolute',
     top: 0,
     left: 44,
@@ -174,8 +181,8 @@ export default StyleSheet.create({
     zIndex: 3
   },
   basketCoconut4: {
-    width: 55.2,
-    height: 60,
+    width: coconutWidth * 1.3,
+    height: coconutHeight * 1.3,
     position: 'absolute',
     top: 8,
     left: 66,
@@ -183,8 +190,8 @@ export default StyleSheet.create({
     zIndex: 4
   },
   basketCoconut5: {
-    width: 55.2,
-    height: 60,
+    width: coconutWidth * 1.3,
+    height: coconutHeight * 1.3,
     position: 'absolute',
     top: 0,
     right: 20,
@@ -192,8 +199,8 @@ export default StyleSheet.create({
     zIndex: 3
   },
   basketCoconut6: {
-    width: 55.2,
-    height: 60,
+    width: coconutWidth * 1.3,
+    height: coconutHeight * 1.3,
     position: 'absolute',
     top: 5,
     right: 8,
