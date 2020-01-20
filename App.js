@@ -1,7 +1,7 @@
 // import React
 import React, {Component} from 'react';
 import { View, ImageBackground, Text, Image } from 'react-native';
-import SplashScreen from 'react-native-splash-scr';
+import SplashScreen from 'react-native-splash-screen';
 
 // import custom components
 import CoconutButton from './src/components/CoconutButton';
