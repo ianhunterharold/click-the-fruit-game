@@ -15,7 +15,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="coconut" translatesAutoresizingMaskIntoConstraints="NO" id="XCq-C3-KIR">
                     <rect key="frame" x="49" y="117" width="382" height="247"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.92829746152258896" green="1" blue="0.79389376791578448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
