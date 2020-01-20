@@ -13,8 +13,8 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="coconut" translatesAutoresizingMaskIntoConstraints="NO" id="XCq-C3-KIR">
-                    <rect key="frame" x="191" y="185" width="98" height="110"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yfG-8q-rFF">
+                    <rect key="frame" x="89" y="90" width="303" height="300"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -26,6 +26,6 @@
         </view>
     </objects>
     <resources>
-        <image name="coconut" width="860" height="933"/>
+        <image name="logo" width="303" height="300"/>
     </resources>
 </document>
