@@ -1,7 +1,7 @@
 // import React
 import React, {Component} from 'react';
 import { View, ImageBackground, Text, Image } from 'react-native';
-// import SplashScreen from 'react-native-splash-scr';
+import SplashScreen from 'react-native-splash-scr';
 
 // import custom components
 import CoconutButton from './src/components/CoconutButton';
@@ -64,6 +64,9 @@ export default class App extends Component{
     this.setState({
       [randomCoconut]: true
     });
+  }
+  componentDidMount(){
+    SplashScreen.hide();
   }
 
   render(){
