@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Image, View } from 'react-native'
+import React, { Component } from 'react'; 
+import { Image, View } from 'react-native';
 import coconut from '../img/coconut.png';
 import customStyles from './customStyles';
+
 
 class Loading extends Component{
 
@@ -13,7 +14,5 @@ class Loading extends Component{
     )
   }
 }
-
-
 
 export default Loading;

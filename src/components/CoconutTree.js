@@ -21,8 +21,6 @@ class CoconutTree extends Component {
     try {
       const value = await AsyncStorage.getItem('@collectedCoconutCount')
       if(value !== null) {
-        // value previously stored
-        console.log(value);
         this.setState({
           collectedCoconutCount: parseInt(value)
         });

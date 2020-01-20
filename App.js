@@ -1,7 +1,8 @@
 // import React
 import React, {Component} from 'react';
-import { View, ImageBackground } from 'react-native';
+import { View, ImageBackground, Text, Image } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import SplashScreen from 'react-native-splash-screen';
 
 // import custom components
 import CoconutButton from './src/components/CoconutButton';
@@ -11,14 +12,15 @@ import InformationModal from './src/components/InformationModal';
 import customStyles from './src/components/customStyles';
 import Loading from './src/components/Loading';
 
+
 // gather images
 import bgImage from './src/img/background.png'
 import palm from './src/img/palm.png'
 import coconut from './src/img/coconut.png'
 
-
 export default class App extends Component{
   state = {
+    'iconAnimating':true,
     'collectedCoconutCount': 0,
     'coconutBunch1A': true,
     'coconutBunch1B': true,
@@ -38,8 +40,6 @@ export default class App extends Component{
     try {
       const value = await AsyncStorage.getItem('@collectedCoconutCount')
       if(value !== null) {
-        // value previously stored
-        console.log(value);
         this.setState({
           collectedCoconutCount: parseInt(value)
         });
@@ -61,7 +61,6 @@ export default class App extends Component{
     storeData = async () => {
       try {
         await AsyncStorage.setItem('@collectedCoconutCount', `${coconutClicks}`);
-        console.log('async stored new coconutClicks count');
       } catch (e) {
         // saving error
         console.log('error with async storage');
@@ -69,8 +68,6 @@ export default class App extends Component{
     }
     storeData();
 
-
-    console.log('collectClick');
 
     // hides the clicked coconut
     this.setState({
@@ -92,8 +89,8 @@ export default class App extends Component{
       [randomCoconut]: true
     });
   }
-
   componentDidMount(){
+    SplashScreen.hide();
     this.getData();
   }
 

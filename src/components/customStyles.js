@@ -246,5 +246,10 @@ export default StyleSheet.create({
   loadingCoconut: {
     width: 96,
     height: 105,
-  }
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#F5FCFF',
+    marginBottom: 5,
+  },
 });
