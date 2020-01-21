@@ -8,6 +8,12 @@ const {width: WIDTH, height: HEIGHT} = Dimensions.get('window')
 if((HEIGHT - 100) > 750){ // 100 is status bar height
   var treeHeight = 642;
   var basketVerticalOffset = 50;
+}else if((HEIGHT - 100) > 700){
+  var treeHeight = 500;
+  var basketVerticalOffset = 40;
+}else if((HEIGHT - 100) > 635){
+  var treeHeight = 500;
+  var basketVerticalOffset = 20;
 }else{
   var treeHeight = 500;
   var basketVerticalOffset = -40;
