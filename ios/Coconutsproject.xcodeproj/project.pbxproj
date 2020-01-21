@@ -634,6 +634,8 @@
 			baseConfigurationReference = 7851CA9D562029B8DE33CCF1 /* Pods-Coconutsproject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 9MVW8MUR75;
@@ -644,7 +646,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brianandian.cocoloco;
 				PRODUCT_NAME = Coconutsproject;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -655,6 +657,8 @@
 			baseConfigurationReference = 8459ACE6B7AA2C0FA1427851 /* Pods-Coconutsproject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9MVW8MUR75;
 				INFOPLIST_FILE = Coconutsproject/Info.plist;
@@ -664,7 +668,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brianandian.cocoloco;
 				PRODUCT_NAME = Coconutsproject;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
