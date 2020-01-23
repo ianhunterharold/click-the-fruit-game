@@ -20,7 +20,7 @@ cd ios/
 pod install
 cd ../
 npx react-native run-ios
-npm install react-native-simple-animations --save
+npm install react-native-splash-screen --save
 
 ```
 
