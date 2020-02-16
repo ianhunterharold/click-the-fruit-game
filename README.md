@@ -1,5 +1,5 @@
 # Pluck Coconuts Off The Tree 
-### A simple game by Brian & Ian to practice React Native and the publishing process
+### A simple game by Brian & Ian to Practice React Native and The Tublishing Process
 
 
 Dependencies:
