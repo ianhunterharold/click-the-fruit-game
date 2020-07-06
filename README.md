@@ -33,4 +33,18 @@ npm install react-native-splash-screen --save
 
 ```
 
+### Note
+
+If you are getting a run error relating to 'not compiling lst' then please update your mac software, update xcode to latest version, follow this links instructions 
+https://medium.com/codespace69/react-native-xcrun-error-unable-to-find-utility-simctl-not-a-developer-tool-or-in-path-bd908d3551be
+and then run
+
+```
+sudo gem install cocoapods
+npm install
+xcode-select --install
+cd ios/ 
+pod install 
+npx react-native run-ios
+```
 
