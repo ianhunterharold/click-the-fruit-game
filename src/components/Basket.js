@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, Animated, Easing, Dimensions } from 'react-native';
 import customStyles from './customStyles';
 
-
 // import images
 import basket from '../img/basket.png'
 import coconut from '../img/coconut.png'
@@ -12,6 +11,7 @@ class Basket extends Component{
     super()
     this.springValue = new Animated.Value(1)
   }
+
   spring () {
     this.springValue.setValue(0.7)
     Animated.spring(
@@ -51,6 +51,5 @@ class Basket extends Component{
     )
   }
 }
-
 
 export default Basket;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-
 const coconut1 = require('../img/coconut-1.png');
 const coconut2 = require('../img/coconut-2.png');
 const coconut3 = require('../img/coconut-3.png');
@@ -17,7 +16,8 @@ class CoconutButton extends Component {
 
   triggerTimerEvents(time){
     if (time < 1){
-      time = 10; // force local variable to 10 for ripeness reset
+      time = 10; 
+      // force local variable to 10 for ripeness reset
       
       // reset time back to 10
       this.setState({
@@ -90,6 +90,7 @@ class CoconutButton extends Component {
   }
 }
 
+//abstract styles to customStyles sheet
 const styles = StyleSheet.create({
 	container: {
 		alignItems: 'center',

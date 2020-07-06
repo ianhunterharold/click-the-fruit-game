@@ -31,7 +31,7 @@ class InformationModal extends Component{
             <Text style={styles.hideButtonText}>X</Text>
           </TouchableHighlight>
           <View style={styles.modalContainer}>
-          	<View style={styles.main}>
+            <View style={styles.main}>
 	            <Image source={logo} />
   	          <Text style={{textAlign: 'center', marginTop: 40, fontSize: 20, color: '#47b9c1', fontWeight: 'bold', marginBottom: 3}} onPress={ ()=> Linking.openURL('https://brianshaffer.com/cocoloco-store-redirect') }>Rate Us</Text>
     	        <Text style={{textAlign: 'center', marginBottom: 20}} onPress={ ()=> Linking.openURL('https://brianshaffer.com/cocoloco-store-redirect') }>⭐️⭐️⭐️⭐️⭐️</Text>
@@ -129,8 +129,6 @@ const styles = StyleSheet.create({
     color: '#47b9c1',
     fontWeight: 'bold'
   },
-  
-
 });
 
 export default InformationModal;
