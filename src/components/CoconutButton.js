@@ -72,31 +72,30 @@ class CoconutButton extends Component {
 
   render(){
     return (
-      <View style={styles.container}>
-        <TouchableOpacity 
-          onPress={ ()=> this.handleClickedCoconut() }
-          activeOpacity={0.8} 
-          >
-            <View>
-              <Image 
-              style={{ width: 96.6, height: 105}}
-              source={ this.state.currentCoconut }
-              />
-              <Text style={styles.time}>{this.state.time}</Text>
-            </View>
+      <View style={styles.coconutButtonContainer}>
+        <TouchableOpacity
+          onPress={() => this.handleClickedCoconut()}
+          activeOpacity={0.8}>
+          <View>
+            <Image
+              style={{width: 96.6, height: 105}}
+              source={this.state.currentCoconut}
+            />
+            <Text style={styles.coconutButtontime}>{this.state.time}</Text>
+          </View>
         </TouchableOpacity>
-			</View>
+      </View>
     );
   }
 }
 
-//abstract styles to customStyles sheet
+// leaving styles inside because of warning to update state on unmounted component
 const styles = StyleSheet.create({
-	container: {
+	coconutButtonContainer: {
 		alignItems: 'center',
     marginTop: -7,
 	},
-  time: {
+  coconutButtontime: {
     position: 'absolute',
     top: 28,
     width: 96.6,
