@@ -12,7 +12,6 @@ import InformationModal from './src/components/InformationModal';
 import customStyles from './src/components/customStyles';
 import Loading from './src/components/Loading';
 
-
 // gather images
 import bgImage from './src/img/background.png'
 import palm from './src/img/palm.png'
@@ -20,7 +19,7 @@ import coconut from './src/img/coconut.png'
 
 export default class App extends Component{
   state = {
-    'iconAnimating':true,
+    'iconAnimating': true,
     'collectedCoconutCount': 0,
     'coconutBunch1A': true,
     'coconutBunch1B': true,
@@ -97,7 +96,6 @@ export default class App extends Component{
   render(){
     return (
       <>
-      {/* <Loading/> */}
       <ImageBackground source={bgImage} style={customStyles.backgroundContainer}>
         <CoconutTree callbackToApp={this.collectClick} treeVisibilityStatus={this.state} />
         <Basket coconutClicks={this.state.collectedCoconutCount} />

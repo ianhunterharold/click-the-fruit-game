@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import customStyles from './customStyles';
 
-
 // import images
 import coconutImg from '../img/coconut.png'
-
 
 class Coconut extends Component {
 	state = {
@@ -38,6 +36,5 @@ class Coconut extends Component {
 		)
 	}
 }
-
 
 export default Coconut;
