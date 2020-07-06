@@ -24,4 +24,4 @@ npm install react-native-splash-screen --save
 
 ```
 
-Made with love <3
+
