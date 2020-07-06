@@ -1,7 +1,16 @@
-# Pluck Coconuts Off The Tree 
-### A simple game by Brian & Ian to Practice React Native and The Publishing Process
+# Coco Loco - Harvest Coconuts
+### A fundamental game by Brian & Ian to implement a React Native application and to further practice the Publishing Process
 
+```
+PUBLISHED!
+iOS
+https://apps.apple.com/ky/app/coco-loco-harvest-coconuts/id1495832332
 
+Play Store
+https://play.google.com/store/apps/details?id=com.coconutsproject&hl=en_US
+```
+
+### Local Setup
 Dependencies:
 - node
 - npx
