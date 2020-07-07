@@ -2,7 +2,8 @@
 ### A fundamental game by Brian & Ian to implement a React Native application and to further practice the Publishing Process
 
 ```
-PUBLISHED!
+Published 
+
 iOS
 https://apps.apple.com/ky/app/coco-loco-harvest-coconuts/id1495832332
 
