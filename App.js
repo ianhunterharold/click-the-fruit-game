@@ -88,6 +88,7 @@ export default class App extends Component{
       [randomCoconut]: true
     });
   }
+  
   componentDidMount(){
     SplashScreen.hide();
     this.getData();

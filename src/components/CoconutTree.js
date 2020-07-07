@@ -11,8 +11,8 @@ import customStyles from './customStyles';
 import coconut from '../img/coconut.png'
 import palm from '../img/palm.png'
 
-
 class CoconutTree extends Component {
+  
   state={
     collectedCoconutCount: 0
   }
@@ -42,26 +42,39 @@ class CoconutTree extends Component {
   }
 
   componentDidMount(){
-    this.getData();
+    this.getData(); 
+    // when we load coconut tree we get integer from async storage
   }
 
   render(){
-
+    const coconutIds = [
+      '1A',
+      '1B',
+      '1C',
+      '2A',
+      '2B',
+      '2C',
+      '3A',
+      '3B',
+      '3C',
+      '4A',
+      '4B',
+      '4C'
+    ];
+    const coconutElements = coconutIds.map(id => 
+       <Coconut
+         key={id}
+         id={`coconutBunch${id}`}
+         coconutVisibility={
+           this.props.treeVisibilityStatus[`coconutBunch${id}`]
+         }
+         callbackToCoconutTree={this.handleCoconutClick}
+       />
+    )
     return(
       <View style={customStyles.treeContainer}>
         <Image source={palm} style={customStyles.palmTree} />
-          <Coconut id="coconutBunch1A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch1A} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch1B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch1B} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch1C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch1C} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch2A} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch2B} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch2C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch2C} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch3A} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch3B} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch3C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch3C} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4A" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch4A} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4B" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch4B} callbackToCoconutTree={this.handleCoconutClick} />
-          <Coconut id="coconutBunch4C" coconutVisibility={this.props.treeVisibilityStatus.coconutBunch4C} callbackToCoconutTree={this.handleCoconutClick} />
+          {coconutElements}
       </View>
     )
   }
