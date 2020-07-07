@@ -1,6 +1,6 @@
 // import React
 import React, {Component} from 'react';
-import { View, ImageBackground, Text, Image } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -10,12 +10,9 @@ import Basket from './src/components/Basket';
 import CoconutTree from './src/components/CoconutTree';
 import InformationModal from './src/components/InformationModal';
 import customStyles from './src/components/customStyles';
-import Loading from './src/components/Loading';
 
 // gather images
 import bgImage from './src/img/background.png'
-import palm from './src/img/palm.png'
-import coconut from './src/img/coconut.png'
 
 export default class App extends Component{
   state = {
@@ -48,7 +45,6 @@ export default class App extends Component{
     }
   }
 
-
   // collects clicks from <CoconutTree />
   collectClick = (coconutClicks, coconutId) => {
     // updates total clicks
@@ -67,7 +63,6 @@ export default class App extends Component{
     }
     storeData();
 
-
     // hides the clicked coconut
     this.setState({
       [coconutId]: false
@@ -75,7 +70,7 @@ export default class App extends Component{
   }
 
   // callback from coconut button to trigger coconut spawn
-  appLevelSpawnCoconut = () => {
+  spawnCoconut = () => {
     // randonly find 1 coconut to set as visible
     var currentState = this.state;
     var invisibleCoconuts = Object.keys(currentState).filter(function(key) {
@@ -97,17 +92,22 @@ export default class App extends Component{
   render(){
     return (
       <>
-      <ImageBackground source={bgImage} style={customStyles.backgroundContainer}>
-        <CoconutTree callbackToApp={this.collectClick} treeVisibilityStatus={this.state} />
-        <Basket coconutClicks={this.state.collectedCoconutCount} />
-        <View style={customStyles.gameStatusBar}>
-          <View style={{position: 'relative'}}>
-            <CoconutButton callBackToAppSpawningNewCoconut={this.appLevelSpawnCoconut}/>
-            <InformationModal/>
+        <ImageBackground
+          source={bgImage}
+          style={customStyles.backgroundContainer}>
+          <CoconutTree
+            collectClick={this.collectClick}
+            treeVisibilityStatus={this.state}
+          />
+          <Basket coconutClicks={this.state.collectedCoconutCount} />
+          <View style={customStyles.gameStatusBar}>
+            <View style={{position: 'relative'}}>
+              <CoconutButton spawnCoconut={this.spawnCoconut} />
+              <InformationModal />
+            </View>
           </View>
-        </View>
-      </ImageBackground>
+        </ImageBackground>
       </>
-    )
+    );
   }
 }

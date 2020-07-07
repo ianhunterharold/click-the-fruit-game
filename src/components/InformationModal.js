@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Modal, Text, TouchableHighlight, View, StyleSheet, Linking, Button, Image} from 'react-native';
+import {Modal, Text, TouchableHighlight, View, Linking, Image} from 'react-native';
 import customStyles from './customStyles'
 
 const logo = require('../img/coco-loco-logo.png');

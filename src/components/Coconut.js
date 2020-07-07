@@ -1,6 +1,5 @@
-// import React
 import React, { Component } from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import customStyles from './customStyles';
 
 // import images
@@ -18,7 +17,7 @@ class Coconut extends Component {
       'visible': false
     });
     // send collection count & coconutId up to CoconutTree
-    this.props.callbackToCoconutTree(this.state.worth, this.props.id)
+    this.props.sendCountAndIdToCoconutTree(this.state.worth, this.props.id)
     // this.findFirstCoconutClickedInObject()
   }
 
@@ -26,7 +25,7 @@ class Coconut extends Component {
 		if(this.state.visible || this.props.coconutVisibility){
 			output = <TouchableOpacity onPress={this.handleCoconutClick} style={customStyles[this.props.id + "Touchable"]}><Image source={coconutImg} style={customStyles.coconut} /></TouchableOpacity>;
 		}else{
-      output = <View></View>
+      output =  null
     }
 
 		return(

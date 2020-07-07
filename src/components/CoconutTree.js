@@ -8,7 +8,6 @@ import Coconut from './Coconut';
 import customStyles from './customStyles';
 
 // gather images
-import coconut from '../img/coconut.png'
 import palm from '../img/palm.png'
 
 class CoconutTree extends Component {
@@ -38,7 +37,7 @@ class CoconutTree extends Component {
     }) 
 
     // tell the App level the new count (so it can give it to the basket)
-    this.props.callbackToApp(newCount, coconutId)
+    this.props.collectClick(newCount, coconutId);
   }
 
   componentDidMount(){
@@ -61,16 +60,17 @@ class CoconutTree extends Component {
       '4B',
       '4C'
     ];
-    const coconutElements = coconutIds.map(id => 
-       <Coconut
-         key={id}
-         id={`coconutBunch${id}`}
-         coconutVisibility={
-           this.props.treeVisibilityStatus[`coconutBunch${id}`]
-         }
-         callbackToCoconutTree={this.handleCoconutClick}
-       />
-    )
+
+    const coconutElements = coconutIds.map(id => (
+      <Coconut
+        key={id}
+        id={`coconutBunch${id}`}
+        coconutVisibility={
+          this.props.treeVisibilityStatus[`coconutBunch${id}`]
+        }
+        sendCountAndIdToCoconutTree={this.handleCoconutClick}
+      />
+    ));
     return(
       <View style={customStyles.treeContainer}>
         <Image source={palm} style={customStyles.palmTree} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, Animated, Easing, Dimensions } from 'react-native';
+import { View, Text, Image, Animated } from 'react-native';
 import customStyles from './customStyles';
 
 // import images

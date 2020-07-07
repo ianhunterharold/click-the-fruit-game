@@ -17,23 +17,15 @@ class CoconutButton extends Component {
   triggerTimerEvents(time){
     if (time < 1){
       time = 10; 
-      // force local variable to 10 for ripeness reset
       
-      // reset time back to 10
-      this.setState({
-        'time': 10
-      })
-
       // spawn new coconut (if available)
-      this.props.callBackToAppSpawningNewCoconut()
-      
-    }else{
+      this.props.spawnCoconut();
+    }
       // update timer with new time
       this.setState({
         'time': time
       })
-    }
-
+    
     if(time > 8){
       this.setState({ 'currentCoconut': coconut1 });
     }else if(time > 6){
@@ -53,7 +45,6 @@ class CoconutButton extends Component {
 
     // trigger possible events
     this.triggerTimerEvents(newTime)
-
   }
 
   countingDownCoconutTime = () => {
@@ -89,7 +80,6 @@ class CoconutButton extends Component {
   }
 }
 
-// leaving styles inside because of warning to update state on unmounted component
 const styles = StyleSheet.create({
 	coconutButtonContainer: {
 		alignItems: 'center',
